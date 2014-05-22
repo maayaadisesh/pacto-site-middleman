@@ -8,7 +8,7 @@
     <title><%= data.page.title || data.site.name %></title>
 
     <%= stylesheet_link_tag "main" %>
-    <%= javascript_include_tag  "modernizr" %>
+    <%= javascript_include_tag  "all" %>
     <%= favicon_tag 'favicon.png' %>
     <% unless current_page.data.head.nil? %>
       <% for p in current_page.data.head %>

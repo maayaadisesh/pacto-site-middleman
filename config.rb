@@ -1,7 +1,20 @@
-require 'kramdown'
+require 'redcarpet'
 
-set :markdown_engine, :kramdown
-set :md, :layout_engine => :erb, :auto_ids => false
+# set :relative_links, true # for deploying to /pacto
+
+set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true, :disable_indented_code_blocks => true, :prettify => true, :tables => true, :with_toc_data => true, :no_intra_emphasis => true
+set :md, :layout_engine => :erb
+
+helpers do
+  def table_of_contents(resource)
+    content = File.read(resource.source_file)
+    content_without_frontmatter = content.gsub(/---.*?---\s*/m, '')
+    toc_renderer = Redcarpet::Render::HTML_TOC.new
+    markdown = Redcarpet::Markdown.new(toc_renderer, nesting_level: 2) # nesting_level is optional
+    markdown.render(content_without_frontmatter)
+  end
+end
 
 ###
 # Compass
@@ -45,16 +58,20 @@ page 'humans.txt', :layout => false
 # Helpers
 ###
 
-set :build_dir, 'public'
+# On GitHub pages, pacto is served as a subdirectory (thoughtworks.github.io/pacto)
+set :build_dir, 'public/pacto'
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
+
+activate :navigation
 
 # Build-specific configuration
 configure :build do
   activate :minify_css
   activate :minify_javascript
   activate :minify_html
+  activate :bourbon
 
   # Enable cache buster
   # activate :cache_buster
@@ -68,7 +85,8 @@ configure :build do
   # activate :smusher
 
   # Or use a different image path
-  # set :http_path, "/Content/images/"
+  set :http_prefix, "/pacto/"
+  # set :http_prefix, "/pacto/"
 end
 
 # Middleman Blog
@@ -107,6 +125,6 @@ end
 activate :directory_indexes
 page "/404.html", :directory_index => false
 
-activate :syntax, :line_numbers => true
+activate :syntax #, :line_numbers => true
 
 activate :livereload

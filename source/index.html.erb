@@ -1,6 +1,137 @@
 ---
-title: Sample Workspace
-layout: layout
+layout: 'docpad_site'
 ---
 
-<%= partial '/partials/sample_page' %>
+<!-- Main hero unit for a primary marketing message or call to action -->
+<header class="tall">
+  <!-- <div class="row">
+    <section class="small-12 large-6 columns large-centered show-for-touch">
+      <%#= image_tag '/images/req_header_validation.gif' %>
+    </section>
+    <section id="editor-section" class="small-12 large-6 columns large-centered hide-for-touch">
+      <div id="editor-mask" class="row">
+        <div id="editor-container">
+            <div id="editor">
+            </div>
+        </div>
+      </div>
+    </section>
+  </div> -->
+  <div class="row">
+    <section class="large-6 columns hexagons">
+      <div class="hex_row_even"> 
+        <div class="center animate" data-anim-type="fadeInDownLarge" data-anim-delay="200">
+          <div class="hexagon" data-overlay-color="red">
+            <div class="hex1">
+              <div class="hex2 justice">
+                <aside class="desc">
+                  <h2>Litigation</h2>
+                  <p>Learn the Pacto legal process</p>
+                </aside>  
+              </div><!--/hex2--> 
+            </div><!--/hex1-->
+          </div><!--/hexagon--> 
+        </div><!--/center-->
+        
+        <div class="center animate" data-anim-type="fadeInDownLarge" data-anim-delay="200">
+          <div class="hexagon" data-overlay-color="green">
+            <div class="hex1">
+              <div class="hex2" style="background: url('http://25.media.tumblr.com/tumblr_mb3lh6abw91rg4gq5o1_500.jpg') center no-repeat">
+                <div class="desc">
+                  <h2>Legal Strategies</h2>
+                  <p>Consumer-Driven Contracts and more</p>
+                </div>  
+              </div><!--/hex2--> 
+            </div><!--/hex1-->
+          </div><!--/hexagon--> 
+        </div><!--/center--> 
+      </div><!--/hex_row_even-->
+
+      <div class="hex_row_odd"> 
+        <div class="center animate" data-anim-type="fadeInLeftLarge" data-anim-delay="200">
+          <div class="hexagon" data-overlay-color="yellow">
+            <div class="hex1">
+              <div class="hex2 contract">
+                <div class="desc">
+                  <h2>Contracts</h2>
+                  <p>Defining agreements between consumer and producer</p>
+                </div>  
+              </div><!--/hex2--> 
+            </div><!--/hex1-->
+          </div><!--/hexagon--> 
+        </div><!--/center-->
+        
+        <div class="center">
+          <div class="hexagon" data-overlay-color="green">
+            <div class="hex1">
+              <div class="hex2" style="background: url('images/judge2.png') center no-repeat; background-size:contain; background-color: white;">
+                <div class="desc">
+                  <h2>Pacto</h2>
+                  <p>RESTful Judgment</p>
+                </div>  
+              </div><!--/hex2--> 
+            </div><!--/hex1-->
+          </div><!--/hexagon--> 
+        </div><!--/center--> 
+        
+        <div class="center animate" data-anim-type="fadeInRightLarge" data-anim-delay="200">
+          <div class="hexagon" data-overlay-color="yellow">
+            <div class="hex1">
+              <div class="hex2 investigation">
+                <div class="desc">
+                  <h2>Investigations</h2>
+                  <p>How Pacto reaches a verdict</p>
+                </div>  
+              </div><!--/hex2--> 
+            </div><!--/hex1-->
+          </div><!--/hexagon--> 
+        </div><!--/center--> 
+        
+      </div><!--/hex_row_even--> 
+        
+      <div class="hex_row_even"> 
+        <div class="center animate" data-anim-type="fadeInUpLarge" data-anim-delay="200">
+          <div class="hexagon" data-overlay-color="red">
+            <div class="hex1">
+              <div class="hex2 mustache">
+                <div class="desc">
+                  <h2>Undercover</h2>
+                  <p>Fake cops with mustaches</p>
+                </div>  
+              </div><!--/hex2--> 
+            </div><!--/hex1-->
+          </div><!--/hexagon--> 
+        </div><!--/center-->
+        
+        <div class="center animate" data-anim-type="fadeInUpLarge" data-anim-delay="200">
+          <div class="hexagon" data-overlay-color="green">
+            <div class="hex1">
+              <div class="hex2 administration">
+                <div class="desc">
+                  <h2>Administration</h2>
+                  <p>Pacto's other courtroom helpers</p>
+                </div>  
+              </div><!--/hex2--> 
+            </div><!--/hex1-->
+          </div><!--/hexagon--> 
+        </div><!--/center--> 
+        
+      </div><!--/hex_row_even-->
+    </section>
+  </div>
+</header>
+
+
+<!-- Example row of columns -->
+<div class="row" >
+	<section class="small-12 large-6 columns">
+		<h2>Consumers</h2>
+		<p>Pacto helps you test consumers by both validating and stubbing services.  This helps you decouple tests to reduce test times and non-deterministic test failures without losing confidence in your test suite.  You can also design compatibility tests for similar consumers.</p>
+		<p><%= link_to 'Learn about Consumers', '/intro/consumers.html' %></p>
+	</section>
+	<section class="small-12 large-6 columns">
+		<h2>Providers</h2>
+		<p>You can use Consumer-Driven Contracts to ensure you're providers are well tested without losing agility.  Pacto will test the provider implementation and make sure it complies with the same contract used to stub the service for consumers.</p>
+    <p><%= link_to 'Learn about Providers', '/intro/providers.html' %></p>
+	</section>
+</div>

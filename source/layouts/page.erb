@@ -1,0 +1,28 @@
+---
+layout: docpad_site
+---
+<% wrap_layout :docpad_site do %>
+  <article id="page" class="page">
+    <header>
+      <div class="row">
+        <div class="columns">
+          <h1><%= data.page.title || data.site.name %></h1>
+          <% if data.page.subtitle %>
+            <h3><%= data.page.subtitle %></h3>
+          <% end %>
+        </div>
+      </div>
+    </header>
+    <div class="row">
+      <nav class="columns large-3">
+        <%= render_navigation %>
+        <%#- @partial('menu.html.eco', {menuItems: @generateMenu(@document.url)}) %>
+      </nav>
+      <div class="columns large-9 small-12 page-content">
+        <%= table_of_contents(current_page) %>
+        <%= yield %>
+        <%#- @partial('doc_nav.html.eco') %>
+      </div>
+    </div>
+  </article>
+<% end %>
