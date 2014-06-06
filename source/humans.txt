@@ -1,3 +1,8 @@
+---
+navigation:
+  hidden: true
+---
+
 /* humanstxt.org */
 
 /* SITE */
