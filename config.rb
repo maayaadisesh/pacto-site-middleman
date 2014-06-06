@@ -9,7 +9,7 @@ set :md, :layout_engine => :erb
 helpers do
   def table_of_contents(resource)
     content = File.read(resource.source_file)
-    content_without_frontmatter = content.gsub(/---.*?---\s*/m, '')
+    content_without_frontmatter = content.gsub(/\A---.*?---\s*/m, '')
     toc_renderer = Redcarpet::Render::HTML_TOC.new
     markdown = Redcarpet::Markdown.new(toc_renderer, nesting_level: 2) # nesting_level is optional
     markdown.render(content_without_frontmatter)
@@ -127,4 +127,4 @@ page "/404.html", :directory_index => false
 
 activate :syntax #, :line_numbers => true
 
-activate :livereload
+#activate :livereload
