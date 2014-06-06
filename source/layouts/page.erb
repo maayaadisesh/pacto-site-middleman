@@ -16,12 +16,10 @@ layout: docpad_site
     <div class="row">
       <nav class="columns large-3">
         <%= render_navigation %>
-        <%#- @partial('menu.html.eco', {menuItems: @generateMenu(@document.url)}) %>
       </nav>
       <div class="columns large-9 small-12 page-content">
         <%= table_of_contents(current_page) %>
         <%= yield %>
-        <%#- @partial('doc_nav.html.eco') %>
       </div>
     </div>
   </article>
