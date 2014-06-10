@@ -50,7 +50,7 @@ Here's an example for a GET request, which doesn't usually have a schema:
 {
   "request": {
     "method": "get",
-    "path": "/api/list_mcguffins",
+    "path": "/api/mcguffins",
     "headers": {
       "Content-Language": "en"
     },
@@ -139,7 +139,81 @@ Here are a few examples for the McGuffin service above:
 }
 ```
 
+# Complete Contract
 
+The full contract described above would look like:
+
+```js
+{
+  "name": "List Movie McGuffins",
+  "request": {
+    "method": "get",
+    "path": "/api/mcguffins",
+    "headers": {
+      "Content-Language": "en"
+    },
+    "params": {
+      "limit": 5
+    }
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "schema": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "mcguffins": {
+          "type": "array",
+          "required": true
+        }
+      }
+    }
+  },
+  "examples": {
+    "default": // This example uses the default request
+    {
+      "request": {},
+      "response": {
+        "body": {
+          "mcguffins": [
+            "goldeneye",
+            "rabbit's foot",
+            "antimatter",
+            "tesseract",
+            "dead man's chest"
+          ]
+        }
+      }
+    },
+    "limited": // This example sets the limit param to get a smaller list
+    {
+      "request": {
+        "params": {
+          "limit": 3
+        }
+      },
+      "response": {
+        "body": {
+          "mcguffins": [
+            "goldeneye",
+            "rabbit's foot",
+            "antimatter"
+          ]
+        }
+      }
+    }
+  }
+}
+```
+
+# What's next?
+
+- Learn how to [create your own Contracts](/contracts/creating.html)
+- Learn how to [load and use Contracts](/contracts/using.html)
 
 [verb]: http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods
 [uri]: http://tools.ietf.org/html/rfc6570

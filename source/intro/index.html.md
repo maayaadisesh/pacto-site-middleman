@@ -94,8 +94,8 @@ See [Wikipedia](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) and [json
 
 # What's next?
 
-- Dive into the [Contract Format](/intro/contracts/)
-- Or how to [test consumers](/intro/consumers/) or [test providers](/intro/providers/)
+- Dive into the [Contract Format](/contracts/index.html)
+- Or how to [test consumers](/consumers/index.html) or [test providers](/providers/index.html)
 
 # Further reading
 
